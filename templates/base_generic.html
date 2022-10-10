@@ -43,8 +43,8 @@
 
 
     <div class="container-fluid my-auto">
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-            <a class="navbar-brand" href="{% url 'index' %}">MY LIBRARY </a>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark px-5">
+            <a class="navbar-brand" href="{% url 'index' %}">LIBRARY MANAGEMENT SYSTEM</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -52,7 +52,7 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav ml-auto">
                     {% if user.is_superuser %}
-                    <li class="nav-item mx-5">
+                    <li class="nav-item mx-2">
                         <a class="nav-link" href="{% url 'student_create' %}">Add Student</a>
                     </li>
 
@@ -67,7 +67,7 @@
                     </li>
                     {% if user.is_authenticated %}
                     <div class="dropdown float">
-                        <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+                        <button type="button" class="btn btn-outline-primary  dropdown-toggle" data-toggle="dropdown">
                             {{ request.user }}
                         </button>
                         <div class="dropdown-menu">
