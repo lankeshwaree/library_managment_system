@@ -6,6 +6,8 @@ from .forms import *
 
 from django.shortcuts import get_object_or_404
 from django.contrib.auth.decorators import login_required
+from django.shortcuts import get_object_or_404
+
 import datetime
 
 # HOME PAGE
@@ -85,7 +87,10 @@ def BookDelete(request, pk):
 @login_required
 def student_request_issue(request, pk):
     obj = Book.objects.get(id=pk)
-    stu=Student.objects.get(roll_no=request.user)
+
+
+    stu = get_object_or_404(Student, roll_no=request.user)
+    # stu=Student.objects.get(roll_no=request.user)
     s = get_object_or_404(Student, roll_no=str(request.user))
     if s.total_books_due < 10:
         message = "book has been isuued, You can collect book from library"
