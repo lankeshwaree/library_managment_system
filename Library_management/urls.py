@@ -32,6 +32,7 @@ urlpatterns = [
     path('book/create/', views.BookCreate, name='book_create'),
     path('book/<int:pk>/update/', views.BookUpdate, name='book_update'),
     path('book/<int:pk>/delete/', views.BookDelete, name='book_delete'),
+    path('book/<int:pk>/request_issue/', views.student_request_issue, name='request_issue'),
 
     path('student/<int:pk>/delete/', views.StudentDelete, name='student_delete'),
     path('student/create/', views.StudentCreate, name='student_create'),
@@ -39,7 +40,6 @@ urlpatterns = [
     path('student/<int:pk>', views.StudentDetail, name='student_detail'),
     path('student/', views.StudentList, name='student_list'),
     path('student/book_list', views.student_BookListView, name='book_student'),
-    path('book/<int:pk>/request_issue/', views.student_request_issue, name='request_issue'),
 
     path('feed/', LatestEntriesFeed(), name='feed'),
     path('return/<int:pk>', views.ret, name='ret'),
